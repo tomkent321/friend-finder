@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <!-- Latest compiled Bootstraap JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    
+    <link href= "../public/style.css" rel="stylesheet" type="text/css" />
+    <link href= "../style.css" rel="stylesheet" type="text/css" />
+   <link href= "style.css" rel="stylesheet" type="text/css" /> 
+
+
+
+
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="jumbotron" align="center">
+            <h1> Survey</h1>
+           
+            <h3>Fill out the form and find a friend!</h2>
+            
+            <p><a class="btn btn-primary btn-lg" href="home.html" role="button"><span aria-hidden="true"></span> Home</a></p>
+        </div>
+        <hr>
+        <div class="row">
+
+            <div class="col-lg-12">
+
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title"><strong>My Information</strong></h3>
+                    </div>
+                    <div class="panel-body">
+                        <form method="POST" role="form">
+
+                            <div class="form-group">
+                                <label for="name">Name</label>
+                                <input type="text" class="form-control" id="name">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="role">Link to Photo</label>
+                                <input type="text" class="form-control" id="photo">
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+
+            <div class="col-lg-12">
+
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title"><strong>Survey Questions</strong></h3>
+                    </div>
+                    <div class="panel-body">
+                        <form method="POST" role="form">
+
+                            <h4>Question 1</h4>
+                            <h5>I love the outdoors and strenuous activity.</h5>
+                            <select class="chosen-select" id="q1">
+                            <option value="select">Select an Option</option>
+                            <option value="1">1 (Strongly Disagree)</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5 (Strongly Agree)</option>
+                          </select>
+                            <hr>
+                            <h4>Question 2</h4>
+                            <h5>I am an early riser. I bound out of bet and can't wait to get started!</h5>
+                            <select class="chosen-select" id="q2">
+                            <option value="select">Select an Option</option>
+                            <option value="1">1 (Strongly Disagree)</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5 (Strongly Agree)</option>
+                          </select>
+                            <hr>
+                            <h4>Question 3</h4>
+                            <h5>I am extremely laid back and rarely ever get uptight</h5>
+                            <select class="chosen-select" id="q3">
+                            <option value="select">Select an Option</option>
+                            <option value="1">1 (Strongly Disagree)</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5 (Strongly Agree)</option>
+                          </select>
+                            <hr>
+                            <h4>Question 4</h4>
+                            <h5>I would rather watch sports on TV than actually play sports</h5>
+                            <select class="chosen-select" id="q4">
+                            <option value="select">Select an Option</option>
+                            <option value="1">1 (Strongly Disagree)</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5 (Strongly Agree)</option>
+                          </select>
+                            <hr>
+                            <h4>Question 5</h4>
+                            <h5>I like reading technical books.</h5>
+                            <select class="chosen-select" id="q5">
+                            <option value="select">Select an Option</option>
+                            <option value="1">1 (Strongly Disagree)</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5 (Strongly Agree)</option>
+                          </select>
+                            <hr>
+                            <h4>Question 6</h4>
+                            <h5>Being financially successful is very important to me.</h5>
+                            <select class="chosen-select" id="q6">
+                            <option value="select">Select an Option</option>
+                            <option value="1">1 (Strongly Disagree)</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5 (Strongly Agree)</option>
+                          </select>
+                            <hr>
+                            <h4>Question 7</h4>
+                            <h5>I would rather work by myself than work in a group.</h5>
+                            <select class="chosen-select" id="q7">
+                            <option value="select">Select an Option</option>
+                            <option value="1">1 (Strongly Disagree)</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5 (Strongly Agree)</option>
+                          </select>
+                            <hr>
+                            <h4>Question 8</h4>
+                            <h5>I would rather go to a classical concert than a rock concert.</h5>
+                            <select class="chosen-select" id="q8">
+                            <option value="select">Select an Option</option>
+                            <option value="1">1 (Strongly Disagree)</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5 (Strongly Agree)</option>
+                          </select>
+                            <hr>
+                            <h4>Question 9</h4>
+                            <h5>I think most people are really good on the inside.</h5>
+                            <select class="chosen-select" id="q9">
+                            <option value="select">Select an Option</option>
+                            <option value="1">1 (Strongly Disagree)</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5 (Strongly Agree)</option>
+                          </select>
+                            <hr>
+                            <h4>Question 10</h4>
+                            <h5>I would rather hike in the wilderness than take a drive.</h5>
+                            <select class="chosen-select" id="q10">
+                            <option value="select">Select an Option</option>
+                            <option value="1">1 (Strongly Disagree)</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5 (Strongly Agree)</option>
+                          </select>
+                        </form>
+                        <br>
+                        <button type="submit" class="btn btn-primary btn-md" id="add-btn"></span> Submit</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--modal-->
+    <div class="modal fade" id="friend-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                    <div class="caption" align="center">And the winner is... </div>
+                    <img src="" id="img" align="center">
+                    <div class="caption" id="caption" align="center"></div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script type="text/javascript">
+        $("#add-btn").on("click", function() {
+            event.preventDefault();
+            var newFriend = {
+                name: $("#name").val().trim(),
+                photo: $("#photo").val().trim(),
+                scores: [$("#q1").val(), $("#q2").val(), $("#q3").val(), $("#q4").val(), $("#q5").val(), $("#q6").val(), $("#q7").val(), $("#q8").val(), $("#q9").val(), $("#q10").val() ]
+            };
+            
+            $.post("/api/friends", newFriend)
+                .done(function(data) {
+                    console.log(data);
+                    $('#caption').text(data.name);
+                    $('#img').attr('src', data.photo);
+                    $('#friend-modal').modal('show');
+                });
+            $("#name").val("");
+            $("#photo").val("");
+            [$("#q1").val(""), $("#q2").val(""), $("#q3").val(""), $("#q4").val(""), $("#q5").val(""), $("#q6").val(""), $("#q7").val(""), $("#q8").val(""), $("#q9").val(""), $("#q10").val("") ]
+        });
+    </script>
+</body>
+
+</html>
