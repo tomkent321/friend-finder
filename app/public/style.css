@@ -20,17 +20,55 @@
 
 .form-check-input {
 
-    margin-left: 50px;
-}
-.question-card {
-    margin-top: 25px;
-}
-
-.multi {
-    height: 300px;
+    /* margin-left: 50px; */
+    /* background-color: hsla(228, 67%, 87%, 0.118); */
+    border: solid black 2px;
+    
 }
 
+.question-label {
 
+ font-size: 22px;
+ color: darkslategrey;
+ margin-bottom: 5px;
+
+}
+
+
+.slide-answer{
+
+    color: hsl(240, 21%, 22%);
+    background-color: hsla(210, 21%, 66%, 0.167);
+    margin-bottom: 20px;
+    border: solid #807c7c 1px;
+    border-radius: 15px;
+    
+
+}
+
+.agree-text {
+    margin-top: 12px;
+    color: hsl(240, 21%, 22%, 0.33);
+}
+
+.slide-style {
+    margin-top: 8px;
+}
+
+#info-form {
+    border: solid #807c7c 3px;
+    border-radius: 15px;
+    padding: 15px;
+    margin-bottom: 15px;
+}
+
+.personal-input{
+
+    font-size: 22px;
+    color: darkslategrey;
+    margin-bottom: 5px;
+
+}
 div.jumbotron {
     background-image: url("./img/8iEbRLbgT.png");
     background-position: 0% 25%;
@@ -46,3 +84,21 @@ div.jumbotron {
 
     /* text-shadow: black 0.3em 0.3em 0.3em; */
   }
+
+  .form-group {
+
+    padding: 15px;
+
+  }
+
+  .tab9 {position:relative;left:620px; 
+           }
+
+#css-check {
+
+    /* background-color: hsla(210, 21%, 66%, 0.167); */
+    margin-bottom: 20px;
+    border: solid #807c7c 1px;
+    border-radius: 15px;
+
+}
