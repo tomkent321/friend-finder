@@ -13,16 +13,25 @@
 </head>
 
 <body>
-    <!-- <div class="container"> -->
-        <div class="jumbotron jumbotron-fluid" align="center">
-            <h1><span class =></span> Friend Finder</h1>
-            
-            <br>
-            <p><a class="btn btn-primary btn-lg" href="survey.html" role="button"><span  aria-hidden="true"></span> Go To Survey</a></p>
+        <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+          <h1 class="display-4">Find a Friend Home</h1>
+          <p class="lead">Take the survey. Find a compatible friend.</p>
+          <!-- <button href="/home.html" id="go-home" type="submit" class="btn btn-primary">Home</button> -->
+          <button id="go-survey" type="button" class="btn btn-outline-primary">Survey</button>
         </div>
-    <!-- </div> -->
-    <!-- JavaScript -->
-    <script type="text/javascript" src="assets/javascript/app.js"></script>
+      </div>
+
+
+    <script type="text/javascript">
+    var url = "";
+    $("#go-survey").on("click", function(){
+    url = window.location.href;
+    window.location = url + "survey.html";
+
+});
+    
+    </script>
 </body>
 
 </html>

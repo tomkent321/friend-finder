@@ -20,7 +20,7 @@
 <body>
         <div class="jumbotron jumbotron-fluid">
                 <div class="container">
-                  <h1 class="display-4">Find a Friend</h1>
+                  <h1 class="display-4">Find a Friend Survey</h1>
                   <p class="lead">Take the survey. Find a compatible friend.</p>
                   <!-- <button href="/home.html" id="go-home" type="submit" class="btn btn-primary">Home</button> -->
                   <button id="go-home" href="home.html" type="button" class="btn btn-outline-primary">Home</button>
@@ -129,7 +129,7 @@
           
                 
                
-                <button id="done" type="submit" class="btn btn-primary">Submit</button>
+                <button id="done" type="submit" class="btn btn-secondary">Submit</button>
             </form>
 
             <!-- <div id='output'></div> -->
@@ -158,10 +158,10 @@
     
 
     <div class="modal fade" id="working-on-it" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered" role="document" id="css-check">
-              <div class="modal-content" id="css-check">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+              <div class="modal-content" >
                 <div class="modal-header">
-                  <h2 class="modal-title" id="exampleModalCenterTitle">Thank you! Your Input has been received. </h2>
+                  <h2 class="modal-title">Thank you! Your Input has been received. </h2>
                 </div>
                 <div class="modal-body">
                   <h3>Looking through our vast list of people to find a compatible match for you.</h3>   
@@ -169,10 +169,7 @@
                 <div class="modal-footer">
                     <div id="count-down">
                         <h4>Just a moment please...</h4>
-  
                     </div>
-                  <!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                  <button type="button" class="btn btn-primary">Save changes</button> -->
                 </div>
               </div>
             </div>
@@ -193,6 +190,7 @@
     $("#done").on("click", function() {
             event.preventDefault();
 
+    $("#done").attr("disabled", true);
             
 
             arrUserScores.push(($("#q2").val()));
@@ -206,7 +204,7 @@
             arrUserScores.push(($("#q9").val()));
             arrUserScores.push(($("#q10").val()));
 
-            console.log(arrUserScores);
+            console.log("survey arruserscore: " + arrUserScores);
             
             var newUser = {
                 name: $("#name-input").val().trim(),
@@ -216,18 +214,16 @@
 
             console.log("newUser: " , newUser);
 
-        
-
-             
             
-$('#working-on-it').modal('show');
-setDelay();
-function setDelay() {
-    setTimeout(function(){ $('#working-on-it').modal('hide'); ; }, 6000);
-};
+            $('#working-on-it').modal('show');
+            console.log("working on it");
+            
+            setDelay();
+            function setDelay() {
+                setTimeout(function(){ $('#working-on-it').modal('hide'); ; }, 6000);
+            };
              
 
-           
             $.post("/api/friends", newUser)
                 .done(function(data) {
                     console.log("this is the survey post: " , data);
@@ -235,38 +231,17 @@ function setDelay() {
                     $('#img').attr('src', data.photo);
                     $('#friend-modal').modal('show');
                 });
+           
 
     });
 
-// $("#go-home").on("click", function(){
-//     var url = window.location.href;
-//     window.location = url + "home.html";
+$("#go-home").on("click", function(){
+var url = "/"; //window.location.href;
+    window.location = url;
 
-// });
+});
 
-
-
-
-
-        $("#add-btn").on("click", function() {
-            event.preventDefault();
-            var newFriend = {
-                name: $("#name").val().trim(),
-                photo: $("#photo").val().trim(),
-                scores: [$("#q1").val(), $("#q2").val(), $("#q3").val(), $("#q4").val(), $("#q5").val(), $("#q6").val(), $("#q7").val(), $("#q8").val(), $("#q9").val(), $("#q10").val() ]
-            };
-            
-            $.post("/api/friends", newFriend)
-                .done(function(data) {
-                    console.log(data);
-                    $('#caption').text(data.name);
-                    $('#img').attr('src', data.photo);
-                    $('#friend-modal').modal('show');
-                });
-            $("#name").val("");
-            $("#photo").val("");
-            [$("#q1").val(""), $("#q2").val(""), $("#q3").val(""), $("#q4").val(""), $("#q5").val(""), $("#q6").val(""), $("#q7").val(""), $("#q8").val(""), $("#q9").val(""), $("#q10").val("") ]
-        });
+        
     </script>
 </body>
 
