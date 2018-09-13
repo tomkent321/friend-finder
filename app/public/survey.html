@@ -183,7 +183,8 @@
 
 
     <script type="text/javascript">
-
+$(document).ready(function () {
+    
 
     var arrUserScores = [];
 
@@ -193,34 +194,37 @@
     $("#done").attr("disabled", true);
             
 
-            arrUserScores.push(($("#q2").val()));
-            arrUserScores.push(($("#q1").val()));
-            arrUserScores.push(($("#q3").val()));
-            arrUserScores.push(($("#q4").val()));
-            arrUserScores.push(($("#q5").val()));
-            arrUserScores.push(($("#q6").val()));
-            arrUserScores.push(($("#q7").val()));
-            arrUserScores.push(($("#q8").val()));
-            arrUserScores.push(($("#q9").val()));
-            arrUserScores.push(($("#q10").val()));
+            arrUserScores.push(parseInt($("#q1").val()));
+            arrUserScores.push(parseInt($("#q2").val()));
+            arrUserScores.push(parseInt($("#q3").val()));
+            arrUserScores.push(parseInt($("#q4").val()));
+            arrUserScores.push(parseInt($("#q5").val()));
+            arrUserScores.push(parseInt($("#q6").val()));
+            arrUserScores.push(parseInt($("#q7").val()));
+            arrUserScores.push(parseInt($("#q8").val()));
+            arrUserScores.push(parseInt($("#q9").val()));
+            arrUserScores.push(parseInt($("#q10").val()));
 
             console.log("survey arruserscore: " + arrUserScores);
             
             var newUser = {
                 name: $("#name-input").val().trim(),
                 photo: $("#photolink-input").val().trim(),
-                userScore: arrUserScores
+                scores: arrUserScores
             }
 
             console.log("newUser: " , newUser);
-
-            
+            //jQuery.noConflict();
             $('#working-on-it').modal('show');
             console.log("working on it");
             
             setDelay();
             function setDelay() {
-                setTimeout(function(){ $('#working-on-it').modal('hide'); ; }, 6000);
+                setTimeout(function(){
+                     $('#working-on-it').modal('hide'); 
+                     $('#friend-modal').modal('show');
+                    }, 6000);
+                     
             };
              
 
@@ -229,12 +233,14 @@
                     console.log("this is the survey post: " , data);
                     $('#caption').text(data.name);
                     $('#img').attr('src', data.photo);
-                    $('#friend-modal').modal('show');
+                    
+                    
                 });
-           
+
+                $('#friend-modal').modal('show');
 
     });
-
+});
 $("#go-home").on("click", function(){
 var url = "/"; //window.location.href;
     window.location = url;

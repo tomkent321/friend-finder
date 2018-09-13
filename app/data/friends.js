@@ -37,7 +37,7 @@ var friends = [{
   {
     name: "Ryan Allen",
     photo: "./img/ryan.jpg",
-    scores: [44,44,36,43,57,24,34,45,27,33],
+    scores: [44,44,36,43,57,24,34,45,27,33]
   }
 ];
   
