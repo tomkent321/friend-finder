@@ -4,17 +4,15 @@ var friends = require("../data/friends");
 module.exports = function(app){
 
     app.get('/api/friends', function(req, res){
-        console.log("Reading API");
         res.json(friends);
-        console.log("friends:" , friends);
-
+       
     });
 
     app.post("/api/friends", function(req, res) {
         var newFriend = req.body;
-        var newScore = newFriend.userScore;
+        var newScore = newFriend.scores;
         var total = 0;
-
+        
         var bestMatch = 100000;
         var index = -1;
 
@@ -24,12 +22,8 @@ module.exports = function(app){
             total = 0;
 
             for(var j = 0; j < newScore.length; j++){
-                // console.log("newscorej:" + newScore[j]);
-                // console.log("friendsi:" + friends[i]);
-                // console.log("friendsi.scoresj:" + friends[i].scores[j]);
                 
-                console.log("friends:" , friends);
-                var diff = Math.abs(newScore[j] - friends[i].scores[j]);
+                var diff = Math.abs(parseInt(newScore[j]) - friends[i].scores[j]);
 
                 total += diff;
             }
@@ -38,8 +32,13 @@ module.exports = function(app){
                 index = i;
             }
         }
+        console.log("Comp % : "+ ((1000 -total)/10) + "%" );
+        var compPct = ((1000 -total)/10);
         console.log('Best Match:', friends[index]);
-        friends.push(newFriend);
+        // friends.push(newFriend);
         res.json(friends[index]);
+
+        console.log("res.json(friends[index]", friends[index]);
+        
     });
 };
