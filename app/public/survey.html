@@ -1,240 +1,261 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title></title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
-        crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+      integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.js"
+      integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+      crossorigin="anonymous"
+    ></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="style.css" />
+  </head>
 
-</head>
-
-<body>
-
-
+  <body>
     <!--modal-->
     <div class="jumbotron jumbotron-fluid">
-        <div class="container">
-            <h1 class="display-4">Find a Friend Survey</h1>
-            <p class="lead">Take the survey. Find a compatible friend.</p>
-            <button id="go-home" href="home.html" type="button" class="btn btn-outline-primary">Home</button>
-            <button id="myBtn" href="" type="button" class="btn btn-success">See Results!</button>
-            <button id="myBtn" href="" type="button" class="btn btn-success">See Results!</button>
+      <div class="container">
+        <h1 class="display-4">Find a Friend Survey</h1>
+        <p class="lead">Take the survey. Find a compatible friend.</p>
+        <button id="go-home" href="home.html" type="button" class="btn btn-outline-primary">
+          Home
+        </button>
+        <button id="myBtn" href="" type="button" class="btn btn-success">See Results!</button>
+        <button id="myBtn" href="" type="button" class="btn btn-success">See Results!</button>
+      </div>
+    </div>
 
+    <!-- The Modal -->
+
+    <div id="myModal" class="modal">
+      <div class="card modal-content">
+        <div class="card-body">
+          <span class="close">&times;</span>
+          <h2>Most Compatible Candidate:</h2>
+          <img src="" id="img" height="250px" width="250px" />
+          <h2 id="caption"></h2>
         </div>
+      </div>
     </div>
 
-    
-
-<!-- The Modal -->
-
-<div id="myModal" class="modal">
-  <div class="card modal-content">
-    <div class="card-body">
-        <span class="close">&times;</span>
-        <h2>Most Compatible Candidate:</h2>
-        <img src="" id="img" height="250px" width="250px">
-        <h2 id="caption"></h2>
-    </div>
-    </div>
-  </div>  
-
-
-
-        <div class="row">
-            <div class="col-lg-1"></div>
-            <div class="col-lg-10">
-
-                <form>
-                    <div class="card" id="info-form">
-                        <div class="card-header personal-input">
-                            Enter your information (required)
-                        </div>
-                        <div class="form-group">
-                            <label for="name-input">Your Name</label>
-                            <input type="text" class="form-control" id="name-input" placeholder="Enter your name here." autocomplete="off">
-                        </div>
-                        <div class="form-group">
-                            <label for="photolink-input">Link to your photo.</label>
-                            <input type="text" class="form-control" id="photolink-input" placeholder="Enter the link to your photo here.">
-                        </div>
-
-                    </div>
-                    <div>
-                        <br>
-                        <p>Move the slider to the location that shows how you feel about the question, then leave it there and
-                            go to the next question. Click the submit button after the last question on the survey when you
-                            are finished. </p>
-                    </div>
-                    <div class="form-group slide-answer">
-                        <p class="question-label">1. I enjoy rugged outdoor activities like running, biking or hiking.</p>
-                        <label class="agree-text" for="formControlRange">Strongly Disagree
-                            <span class="tab9">Strongly Agree</span>
-                        </label>
-                        <input type="range" class="form-control-range js-range-slider  slide-style" id="q1">
-                    </div>
-                    <div class="form-group slide-answer">
-                        <p class="question-label">2. I like being the "life of the party." </p>
-                        <label class="agree-text" for="formControlRange">Strongly Disagree
-                            <span class="tab9">Strongly Agree</span>
-                        </label>
-                        <input type="range" class="form-control-range js-range-slider  slide-style" id="q2">
-                    </div>
-                    <div class="form-group slide-answer">
-                        <p class="question-label">3. I would rather read a good book than to go to a movie. </p>
-                        <label class="agree-text" for="formControlRange">Strongly Disagree
-                            <span class="tab9">Strongly Agree</span>
-                        </label>
-                        <input type="range" class="form-control-range js-range-slider  slide-style" id="q3">
-                    </div>
-                    <div class="form-group slide-answer">
-                        <p class="question-label">4. I think most people are basically good. </p>
-                        <label class="agree-text" for="formControlRange">Strongly Disagree
-                            <span class="tab9">Strongly Agree</span>
-                        </label>
-                        <input type="range" class="form-control-range js-range-slider  slide-style" id="q4">
-                    </div>
-                    <div class="form-group slide-answer">
-                        <p class="question-label">5. For most important projects I would rather work by myself than work in a team. </p>
-                        <label class="agree-text" for="formControlRange">Strongly Disagree
-                            <span class="tab9">Strongly Agree</span>
-                        </label>
-                        <input type="range" class="form-control-range js-range-slider  slide-style" id="q5">
-                    </div>
-                    <div class="form-group slide-answer">
-                        <p class="question-label">6. I think being honest with someone is more useful than trying to protect their feelings. </p>
-                        <label class="agree-text" for="formControlRange">Strongly Disagree
-                            <span class="tab9">Strongly Agree</span>
-                        </label>
-                        <input type="range" class="form-control-range js-range-slider  slide-style" id="q6">
-                    </div>
-                    <div class="form-group slide-answer">
-                        <p class="question-label">7. I would rather be really smart than really good looking. </p>
-                        <label class="agree-text" for="formControlRange">Strongly Disagree
-                            <span class="tab9">Strongly Agree</span>
-                        </label>
-                        <input type="range" class="form-control-range js-range-slider  slide-style" id="q7">
-                    </div>
-                    <div class="form-group slide-answer">
-                        <p class="question-label">8. I would rather be really good looking than very rich. </p>
-                        <label class="agree-text" for="formControlRange">Strongly Disagree
-                            <span class="tab9">Strongly Agree</span>
-                        </label>
-                        <input type="range" class="form-control-range js-range-slider  slide-style" id="q8">
-                    </div>
-                    <div class="form-group slide-answer">
-                        <p class="question-label">9. I feel like I have an important purpose in my life that is worth sacrificing for.</p>
-                        <label class="agree-text" for="formControlRange">Strongly Disagree
-                            <span class="tab9">Strongly Agree</span>
-                        </label>
-                        <input type="range" class="form-control-range js-range-slider  slide-style" id="q9">
-                    </div>
-                    <div class="form-group slide-answer">
-                        <p class="question-label">10. I am lonely at this time in my life and really need a good friend. </p>
-                        <label class="agree-text" for="formControlRange">Strongly Disagree
-                            <span class="tab9">Strongly Agree</span>
-                        </label>
-                        <input type="range" class="form-control-range js-range-slider  slide-style" id="q10">
-                    </div>
-
-
-                    <button id="done" type="submit" class="btn btn-secondary">Submit</button>
-                </form>
-
-                <!-- <div id='output'></div> -->
-
-                <div class="col-lg-1"></div>
+    <div class="row">
+      <div class="col-lg-1"></div>
+      <div class="col-lg-10">
+        <form>
+          <div class="card" id="info-form">
+            <div class="card-header personal-input">
+              Enter your information (required)
             </div>
-        </div>
+            <div class="form-group">
+              <label for="name-input">Your Name</label>
+              <input
+                type="text"
+                class="form-control"
+                id="name-input"
+                placeholder="Enter your name here."
+                autocomplete="off"
+              />
+            </div>
+            <div class="form-group">
+              <label for="photolink-input">Link to your photo. (Optional)</label>
+              <input
+                type="text"
+                class="form-control"
+                id="photolink-input"
+                placeholder="Enter the link to your photo here. (optional)"
+              />
+            </div>
+          </div>
+          <div>
+            <br />
+            <p>
+              Move the slider to the location that shows how you feel about the question, then leave
+              it there and go to the next question. Click the submit button after the last question
+              on the survey when you are finished.
+            </p>
+          </div>
+          <div class="form-group slide-answer">
+            <p class="question-label">
+              1. I enjoy rugged outdoor activities like running, biking or hiking.
+            </p>
+            <label class="agree-text" for="formControlRange">
+              <div class="choose-item">Strongly DISAGREE</div>
+              <div class="choose-item">Strongly AGREE</div>
+            </label>
+            <input type="range" class="form-control-range js-range-slider  slide-style" id="q1" />
+          </div>
 
+          <div class="form-group slide-answer">
+            <p class="question-label">2. I like being the "life of the party."</p>
+            <label class="agree-text" for="formControlRange">
+              <div class="choose-item">Strongly DISAGREE</div>
+              <div class="choose-item">Strongly AGREE</div>
+            </label>
+            <input type="range" class="form-control-range js-range-slider  slide-style" id="q2" />
+          </div>
 
-        <script type="text/javascript">
-            $(document).ready(function () {
+          <div class="form-group slide-answer">
+            <p class="question-label">3. I would rather read a good book than to go to a movie.</p>
+            <label class="agree-text" for="formControlRange">
+              <div class="choose-item">Strongly DISAGREE</div>
+              <div class="choose-item">Strongly AGREE</div>
+            </label>
+            <input type="range" class="form-control-range js-range-slider  slide-style" id="q3" />
+          </div>
+          <div class="form-group slide-answer">
+            <p class="question-label">4. I think most people are basically good.</p>
+            <label class="agree-text" for="formControlRange">
+              <div class="choose-item">Strongly DISAGREE</div>
+              <div class="choose-item">Strongly AGREE</div>
+            </label>
+            <input type="range" class="form-control-range js-range-slider  slide-style" id="q4" />
+          </div>
+          <div class="form-group slide-answer">
+            <p class="question-label">
+              5. For most important projects I would rather work by myself than work in a team.
+            </p>
+            <label class="agree-text" for="formControlRange">
+              <div class="choose-item">Strongly DISAGREE</div>
+              <div class="choose-item">Strongly AGREE</div>
+            </label>
+            <input type="range" class="form-control-range js-range-slider  slide-style" id="q5" />
+          </div>
+          <div class="form-group slide-answer">
+            <p class="question-label">
+              6. I think being honest with someone is more useful than trying to protect their
+              feelings.
+            </p>
+            <label class="agree-text" for="formControlRange">
+              <div class="choose-item">Strongly DISAGREE</div>
+              <div class="choose-item">Strongly AGREE</div>
+            </label>
+            <input type="range" class="form-control-range js-range-slider  slide-style" id="q6" />
+          </div>
+          <div class="form-group slide-answer">
+            <p class="question-label">
+              7. I would rather be really smart than really good looking.
+            </p>
+            <label class="agree-text" for="formControlRange">
+              <div class="choose-item">Strongly DISAGREE</div>
+              <div class="choose-item">Strongly AGREE</div>
+            </label>
+            <input type="range" class="form-control-range js-range-slider  slide-style" id="q7" />
+          </div>
+          <div class="form-group slide-answer">
+            <p class="question-label">8. I would rather be really good looking than very rich.</p>
+            <label class="agree-text" for="formControlRange">
+              <div class="choose-item">Strongly DISAGREE</div>
+              <div class="choose-item">Strongly AGREE</div>
+            </label>
+            <input type="range" class="form-control-range js-range-slider  slide-style" id="q8" />
+          </div>
+          <div class="form-group slide-answer">
+            <p class="question-label">
+              9. I feel like I have an important purpose in my life that is worth sacrificing for.
+            </p>
+            <label class="agree-text" for="formControlRange">
+              <div class="choose-item">Strongly DISAGREE</div>
+              <div class="choose-item">Strongly AGREE</div>
+            </label>
+            <input type="range" class="form-control-range js-range-slider  slide-style" id="q9" />
+          </div>
+          <div class="form-group slide-answer">
+            <p class="question-label">
+              10. I am lonely at this time in my life and really need a good friend.
+            </p>
+            <label class="agree-text" for="formControlRange">
+              <div class="choose-item">Strongly DISAGREE</div>
+              <div class="choose-item">Strongly AGREE</div>
+            </label>
+            <input type="range" class="form-control-range js-range-slider  slide-style" id="q10" />
+          </div>
 
-//********************************************************************************
+          <button id="done" type="submit" class="btn btn-secondary">Submit</button>
+        </form>
 
-var modal = document.getElementById('myModal');
-var btn = document.getElementById("myBtn");
-var span = document.getElementsByClassName("close")[0];
-btn.onclick = function() {
-    modal.style.display = "block";
-}
-span.onclick = function() {
-    modal.style.display = "none";
+        <!-- <div id='output'></div> -->
 
-    var url = "/"; //window.location.href;
-                window.location = url;
-    
+        <div class="col-lg-1"></div>
+      </div>
+    </div>
 
-    }
+    <script type="text/javascript">
+      $(document).ready(function() {
+        //********************************************************************************
 
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-    if (event.target == modal) {
-        modal.style.display = "none";
-    }
-}
+        var modal = document.getElementById('myModal');
+        var btn = document.getElementById('myBtn');
+        var span = document.getElementsByClassName('close')[0];
+        btn.onclick = function() {
+          modal.style.display = 'block';
+        };
+        span.onclick = function() {
+          modal.style.display = 'none';
 
+          var url = '/'; //window.location.href;
+          window.location = url;
+        };
 
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function(event) {
+          if (event.target == modal) {
+            modal.style.display = 'none';
+          }
+        };
 
+        //********************************************************************************
 
+        var arrUserScores = [];
 
+        $('#done').on('click', function() {
+          event.preventDefault();
 
-//********************************************************************************
+          $('#done').attr('disabled', true);
 
-                var arrUserScores = [];
+          arrUserScores.push(parseInt($('#q1').val()));
+          arrUserScores.push(parseInt($('#q2').val()));
+          arrUserScores.push(parseInt($('#q3').val()));
+          arrUserScores.push(parseInt($('#q4').val()));
+          arrUserScores.push(parseInt($('#q5').val()));
+          arrUserScores.push(parseInt($('#q6').val()));
+          arrUserScores.push(parseInt($('#q7').val()));
+          arrUserScores.push(parseInt($('#q8').val()));
+          arrUserScores.push(parseInt($('#q9').val()));
+          arrUserScores.push(parseInt($('#q10').val()));
 
-                $("#done").on("click", function () {
-                    event.preventDefault();
+          console.log('survey arruserscore: ' + arrUserScores);
 
-                    $("#done").attr("disabled", true);
+          var newUser = {
+            name: $('#name-input')
+              .val()
+              .trim(),
+            photo: $('#photolink-input')
+              .val()
+              .trim(),
+            scores: arrUserScores
+          };
 
-
-                    arrUserScores.push(parseInt($("#q1").val()));
-                    arrUserScores.push(parseInt($("#q2").val()));
-                    arrUserScores.push(parseInt($("#q3").val()));
-                    arrUserScores.push(parseInt($("#q4").val()));
-                    arrUserScores.push(parseInt($("#q5").val()));
-                    arrUserScores.push(parseInt($("#q6").val()));
-                    arrUserScores.push(parseInt($("#q7").val()));
-                    arrUserScores.push(parseInt($("#q8").val()));
-                    arrUserScores.push(parseInt($("#q9").val()));
-                    arrUserScores.push(parseInt($("#q10").val()));
-
-                    console.log("survey arruserscore: " + arrUserScores);
-
-                    var newUser = {
-                        name: $("#name-input").val().trim(),
-                        photo: $("#photolink-input").val().trim(),
-                        scores: arrUserScores
-                    }
-
-                    
-
-
-                    $.post("/api/friends", newUser)
-                        .done(function (data) {
-                            console.log("this is the survey post: ", data);
-                            $('#caption').text(data.name);
-                            $('#img').attr('src', data.photo);
-                            $('html, body').animate({ scrollTop: 0 }, 800);
-                            $("#myBtn").show(1000);
-
-                        });
-                });
-            });
-            $("#go-home").on("click", function () {
-                var url = "/"; //window.location.href;
-                window.location = url;
-
-            });
-
-
-        </script>
-</body>
-
+          $.post('/api/friends', newUser).done(function(data) {
+            console.log('this is the survey post: ', data);
+            $('#caption').text(data.name);
+            $('#img').attr('src', data.photo);
+            $('html, body').animate({ scrollTop: 0 }, 800);
+            $('#myBtn').show(1000);
+          });
+        });
+      });
+      $('#go-home').on('click', function() {
+        var url = '/'; //window.location.href;
+        window.location = url;
+      });
+    </script>
+  </body>
 </html>
